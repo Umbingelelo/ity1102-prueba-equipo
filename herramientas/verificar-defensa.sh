@@ -15,7 +15,7 @@ revisar() { python3 -c "import json,sys; c=json.loads(sys.stdin.read()); $1" <<<
 
 echo "Regla 1 · sin build:, solo imágenes de GHCR"
 grep -qE '^\s+build:' compose.yaml && mal "compose.yaml tiene build:" || bien "sin build:"
-if grep -q "tu-usuario/tu-repo" compose.yaml; then
+if grep -q "ghcr.io/tu-usuario/tu-repo-" compose.yaml; then
   if [[ -f .plantilla ]]; then echo "  aviso: es la plantilla sin iniciar (herramientas/iniciar.sh <caso> lo arregla)"
   else mal "quedó «tu-usuario/tu-repo»: corre herramientas/iniciar.sh <caso>"; fi
 else bien "imágenes con tu repositorio"; fi
