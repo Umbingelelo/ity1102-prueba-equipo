@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from app import db, ia
 
-TITULO = "Kipu Pagos · detección de fraude"
+TITULO = "Kipu Pagos · detección de fraude (EP3)"
 DESCRIPCION = "Evalúa una transacción antes de autorizarla: aprobar, revisar o bloquear, con sus razones."
 
 # RF3 · los umbrales los fija riesgo, no ingeniería: se cambian en el .env y se reinicia, sin desplegar
